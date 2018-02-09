@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <h2>Thats results</h2>
-    <HelloWorld/>
+    <results-list/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import ResultsList from './components/ResultsList'
 
 export default {
   name: 'Results',
   components: {
-    HelloWorld
+    'results-list': ResultsList
   }
 }
 </script>

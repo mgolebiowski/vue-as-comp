@@ -1,17 +1,51 @@
 <template>
   <div id="app">
     <h2>Thats Form</h2>
-    <HelloWorld/>
+    <form>
+      <form-text-input
+        @updateValue="updateElValue"
+        :value="text1.value"
+        :label-text="text1.labelText"
+        :html-id="text1.htmlId" />
+      <form-text-input
+        @updateValue="updateElValue"
+        :value="text2.value"
+        :label-text="text2.labelText"
+        :html-id="text2.htmlId" />
+    </form>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import FormTextInput from './components/FormTextInput'
 
 export default {
   name: 'Form',
   components: {
-    HelloWorld
+    'form-text-input': FormTextInput
+  },
+  data () {
+    return {
+      text1: {
+        labelText: "Awsome text input",
+        htmlId: "individual_input",
+        value: "hello world"
+      },
+      text2: {
+        labelText: "Another awsome text input",
+        htmlId: "more_indiv_inp",
+        value: "Zdrastuj'tie!"
+      }
+    }
+  },
+  created () {
+    this.$store.commit('registerElement', this.text1)
+    this.$store.commit('registerElement', this.text2)
+  },
+  methods: {
+    updateElValue (elId, elValue) {
+      this.$store.commit('changeValue', {id: elId, val: elValue})
+    }
   }
 }
 </script>
@@ -24,5 +58,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+form{
+  text-align: left;
 }
 </style>

@@ -6,18 +6,25 @@ import Results from './Results'
 import Form from './Form'
 import "jquery"
 import "bootstrap-sass/assets/stylesheets/_bootstrap.scss"
-import "imports-loader?bootstrap-sass/assets/javascripts/bootstrap"
+import "imports-loader?$=jquery,jQuery=jquery!bootstrap-sass/assets/javascripts/bootstrap"
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
+    form: []
   },
   mutations: {
     increment (state) {
       state.count++
+    },
+    registerElement (state, element) {
+      state.form.push(element)
+    },
+    changeValue (state, obj) {
+      state.form.find( (el) => (el.htmlId === obj.id) ).value = obj.val
     }
   }
 })
