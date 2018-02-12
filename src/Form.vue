@@ -2,12 +2,12 @@
   <div id="app">
     <h2>Thats Form</h2>
     <form>
-      <form-text-input
+      <FormTextInput
         @updateValue="updateElValue"
         :value="text1.value"
         :label-text="text1.labelText"
         :html-id="text1.htmlId" />
-      <form-text-input
+      <FormTextInput
         @updateValue="updateElValue"
         :value="text2.value"
         :label-text="text2.labelText"
@@ -22,7 +22,7 @@ import FormTextInput from './components/FormTextInput'
 export default {
   name: 'Form',
   components: {
-    'form-text-input': FormTextInput
+    FormTextInput
   },
   data () {
     return {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h2>Thats results</h2>
-    <results-list/>
+    <ResultsList />
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import ResultsList from './components/ResultsList'
 export default {
   name: 'Results',
   components: {
-    'results-list': ResultsList
+    ResultsList
   }
 }
 </script>
