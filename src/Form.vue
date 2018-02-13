@@ -1,19 +1,9 @@
-<template>
-  <div id="app">
-    <h2>Thats Form</h2>
-    <form>
-      <FormTextInput
-        @updateValue="updateElValue"
-        :value="text1.value"
-        :label-text="text1.labelText"
-        :html-id="text1.htmlId" />
-      <FormTextInput
-        @updateValue="updateElValue"
-        :value="text2.value"
-        :label-text="text2.labelText"
-        :html-id="text2.htmlId" />
-    </form>
-  </div>
+<template lang="pug">
+  #app
+    h2 Thats Form
+    form
+      FormTextInput(@updateValue="updateElValue" :value="text1.value" :label-text="text1.labelText" :html-id="text1.htmlId")
+      FormTextInput(@updateValue="updateElValue" :value="text2.value" :label-text="text2.labelText" :html-id="text2.htmlId")
 </template>
 
 <script>

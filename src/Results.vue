@@ -1,8 +1,16 @@
-<template>
-  <div id="app">
-    <h2>Thats results</h2>
-    <ResultsList />
-  </div>
+<template lang="pug">
+  #app
+    h2 Thats results
+    ResultsList
+    div
+      h2 Thats data from internet:
+      p(v-if="!dataFromInternet.length") Please wait...
+      .panel.panel-default.list-from-internet(:key="post.id" v-for="post in dataFromInternet")
+        .panel-heading
+          h3.panel-title {{post.title}}
+        .panel-body
+          p {{post.body}}
+
 </template>
 
 <script>
@@ -12,6 +20,14 @@ export default {
   name: 'Results',
   components: {
     ResultsList
+  },
+  created () {
+    this.$store.dispatch('fetchData')
+  },
+  computed: {
+    dataFromInternet () {
+      return this.$store.state.dataFromInternet
+    }
   }
 }
 </script>
@@ -24,5 +40,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.list-from-internet .title{
+  font-weight: bold;
 }
 </style>
