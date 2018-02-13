@@ -1,9 +1,19 @@
 <template lang="pug">
-  #app
+  #form
     h2 Thats Form
     form
-      FormTextInput(@updateValue="updateElValue" :value="text1.value" :label-text="text1.labelText" :html-id="text1.htmlId")
-      FormTextInput(@updateValue="updateElValue" :value="text2.value" :label-text="text2.labelText" :html-id="text2.htmlId")
+      FormTextInput(
+        @updateValue="updateElValue"
+        :value="text1.value"
+        :label-text="text1.labelText"
+        :html-id="text1.htmlId"
+      )
+      FormTextInput(
+        @updateValue="updateElValue"
+        :value="text2.value"
+        :label-text="text2.labelText"
+        :html-id="text2.htmlId"
+      )
 </template>
 
 <script>
@@ -40,8 +50,8 @@ export default {
 }
 </script>
 
-<style>
-#app {
+<style scope>
+#form {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

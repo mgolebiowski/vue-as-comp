@@ -1,5 +1,5 @@
 <template lang="pug">
-  #app
+  #results
     h2 Thats results
     ResultsList
     div
@@ -26,14 +26,14 @@ export default {
   },
   computed: {
     dataFromInternet () {
-      return this.$store.state.dataFromInternet
+      return this.$store.state.InternetModule.dataFromInternet
     }
   }
 }
 </script>
 
-<style>
-#app {
+<style scope>
+#results {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,5 +43,9 @@ export default {
 }
 .list-from-internet .title{
   font-weight: bold;
+}
+
+.panel{
+  text-align: left;
 }
 </style>

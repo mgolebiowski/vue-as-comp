@@ -3,7 +3,7 @@ export default {
   name: 'ResultsList',
   data () {
     return {
-      formArray: this.$store.state.form
+      formArray: this.$store.state.FormModule.form
     }
   }
 }

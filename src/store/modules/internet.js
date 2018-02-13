@@ -1,21 +1,12 @@
 import Vue from "vue"
 import Vuex from "vuex";
-import DataFetcher from './data-fetcher'
+import DataFetcher from '@/api/data-fetcher'
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export default {
   state: {
-    form: [],
     dataFromInternet: []
   },
   mutations: {
-    registerElement (state, element) {
-      state.form.push(element)
-    },
-    changeValue (state, obj) {
-      state.form.find( (el) => (el.htmlId === obj.id) ).value = obj.val
-    },
     pushData (state, data) {
       state.dataFromInternet = data
     }
@@ -30,4 +21,4 @@ export default new Vuex.Store({
       dataFetcher.updateWithTimeout()
     }
   }
-})
+}
