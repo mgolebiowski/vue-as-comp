@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import Results from './Results'
 import Form from './Form'
+import Posts from './Posts'
 import "jquery"
 import "bootstrap-sass/assets/stylesheets/_bootstrap.scss"
 import "imports-loader?$=jquery,jQuery=jquery!bootstrap-sass/assets/javascripts/bootstrap"
@@ -24,4 +25,11 @@ new Vue({
   store,
   components: { Form },
   template: '<Form/>'
+})
+
+new Vue({
+  el: '#posts',
+  store,
+  components: { Posts },
+  template: '<Posts/>'
 })
